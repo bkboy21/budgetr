@@ -1,19 +1,28 @@
 //Express required to run app
 const express = require("express");
-const methodOverride = require("method-override");
+const budget = require("./models/budget.js");
+// const methodOverride = require("method-override");
 
 const app = express();
 const port = 3000;
 
-const iList = require("./models/budget.js");
+const Budget = require("./models/budget.js");
+
+// Middleware:
+
+app.use((req, res, next) => {
+    console.log("I run for all routes!");
+    next();
+});
+app.use(express.urlencoded({ extended: false }));
 
 // INDEX
-app.get('/budgets', (req, res)=>{
-    res.render("index.ejs", { allFruits: fruits });
+app.get('/budgets', (req, res) => {
+    res.send("with some text like 'hello world");
 });
 
-
-app.get('/budgets/:index', (req, res)=>{
+// show
+app.get('/budgets/:index', (req, res) => {
     res.render("index.ejs", { allFruits: fruits });
 });
 
@@ -25,8 +34,8 @@ app.get('/budgets/new', (req, res) => {
 
 
 
-// post
-app.get('/budgets', (req, res) => {
+// create
+app.post('/budgets', (req, res) => {
     res.render("new.ejs");
 });
 
@@ -38,6 +47,6 @@ app.get('/budgets', (req, res) => {
 
 
 // Express Web Server port - app.listen
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log(`listening on port`, port)
 });
