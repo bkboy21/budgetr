@@ -2,30 +2,50 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/public/css/normalize.css">
-    <link rel="stylesheet" href="/public/css/skeleton.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/normalize.css">
+  <link rel="stylesheet" href="/skeleton.css">
 
 </head>
 
 <body>
-    <h1></h1>
+  <h1></h1>
 
-    <div class="continer">
+  <div class="container">
 
-        <table>
-            <tr>
-              <td>Emil</td>
-              <td>Tobias</td>
-              <td>Linus</td>
-            </tr>
-          </table>
+    <table>
+      <tr>
+        <h1>Name</h1>
+        <td>
+          <%= allBudget.name %>
+        </td>
+        <h1>Date</h1>
+        <td>
+          <%= allBudget.date %>
+        </td>
+        <h1>Amount</h1>
+        <td>
+          <%= allBudget.amount %>
+        </td>
+        <h1>From</h1>
+        <td>
+          <%= allBudget.from %>
+        </td>
+        <h1>Tags</h1>
+        <td>
+          <%= allBudget.tags %>
+        </td>
 
-    </div>
-    <button type=“button”><a href=“/index.ejs”>BAck To INdex</a></button>
+
+      </tr>
+    </table>
+
+  </div>
+  
+  <button type=“button”><a href="/budgets" class="back-btn">Back</a></button>
 
 </body>
 

@@ -1,7 +1,7 @@
 //Express required to run app
 const express = require("express");
 const budget = require("./models/budget.js");
-// const methodOverride = require("method-override");
+
 
 const app = express();
 const port = 3000;
@@ -9,6 +9,8 @@ const port = 3000;
 const Budget = require("./models/budget.js");
 
 // Middleware:
+app.use(express.static("public"));
+
 
 app.use((req, res, next) => {
     console.log("I run for all routes!");
@@ -18,12 +20,14 @@ app.use(express.urlencoded({ extended: false }));
 
 // INDEX
 app.get('/budgets', (req, res) => {
-    res.send("with some text like 'hello world");
+    res.render("index.ejs", { allBudget: budget });
 });
 
 // show
 app.get('/budgets/:index', (req, res) => {
-    res.render("index.ejs", { allFruits: fruits });
+    res.render('show.ejs', {
+		allBudget: budget[req.params.index]
+	});
 });
 
 

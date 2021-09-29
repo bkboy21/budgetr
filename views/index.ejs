@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/public/css/normalize.css">
-    <link rel="stylesheet" href="/public/css/skeleton.css">
+    <link rel="stylesheet" href="/normalize.css">
+<link rel="stylesheet" href="/skeleton.css">
 
 </head>
 
@@ -17,11 +17,15 @@
     <div class="continer">
 
         <table>
+          <% for(let i=0; i < allBudget.length; i++) { %>
             <tr>
-              <td>Emil</td>
-              <td>Tobias</td>
-              <td>Linus</td>
+              <td> <a href="/budgets/<%= i %>">
+                <%= allBudget[i].name%>
+            </a>
+          </td>
+              
             </tr>
+            <% } %>
           </table>
 
     </div>
