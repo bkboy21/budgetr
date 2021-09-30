@@ -10,6 +10,7 @@ const Budget = require("./models/budget.js");
 
 // Middleware:
 app.use(express.static("public"));
+var bodyParser = require('body-parser')
 
 
 app.use((req, res, next) => {
@@ -18,16 +19,13 @@ app.use((req, res, next) => {
 });
 app.use(express.urlencoded({ extended: false }));
 
+
+
+
+
 // INDEX
 app.get('/budgets', (req, res) => {
     res.render("index.ejs", { allBudget: budget });
-});
-
-// show
-app.get('/budgets/:index', (req, res) => {
-    res.render('show.ejs', {
-		allBudget: budget[req.params.index]
-	});
 });
 
 
@@ -38,10 +36,27 @@ app.get('/budgets/new', (req, res) => {
 
 
 
+// need to copltes 
+app.post('/budgets/new', (req, res) => {
+    res.render("new.ejs");
+});
+
+
+
 // create
 app.post('/budgets', (req, res) => {
     res.render("new.ejs");
 });
+
+// show
+app.get('/budgets/:index', (req, res) => {
+    res.render('show.ejs', {
+		allBudget: budget[req.params.index]
+	});
+});
+
+
+
 
 
 

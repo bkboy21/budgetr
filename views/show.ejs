@@ -8,33 +8,36 @@
   <title>Document</title>
   <link rel="stylesheet" href="/normalize.css">
   <link rel="stylesheet" href="/skeleton.css">
+  <link rel="stylesheet" href="/style.css">
 
 </head>
 
 <body>
   <h1></h1>
 
-  <div class="container">
+  <div class="continer">
 
     <table>
       <tr>
-        <h1>Name</h1>
+        <th>Name:</th>
+        <br>
         <td>
           <%= allBudget.name %>
         </td>
-        <h1>Date</h1>
+        <th>Date:</th>
+        <br>
         <td>
           <%= allBudget.date %>
         </td>
-        <h1>Amount</h1>
+        <th>Amount:</th>
         <td>
           <%= allBudget.amount %>
         </td>
-        <h1>From</h1>
+        <th>From:</th>
         <td>
           <%= allBudget.from %>
         </td>
-        <h1>Tags</h1>
+        <th>Tags:</th>
         <td>
           <%= allBudget.tags %>
         </td>

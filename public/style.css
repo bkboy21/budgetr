@@ -1,0 +1,23 @@
+
+  
+  body {
+    height: 100vh; 
+    margin: 100px;
+    justify-content: center; 
+  }
+ th {
+   display: inline-table;
+   font-size: 30px;
+   color: lightskyblue;
+ }
+ td {
+   display: inherit;
+ }
+
+  h1 {
+    color: red;
+  }
+
+ 
+
+  
